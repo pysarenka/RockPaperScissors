@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+</head>
+<body>
+ And the winner is....
+<form action="#" th:action="@{'/showWinner'+${result.winner}}" method="post">
+    <p th:text="${result.getWinner()}"th:value="${result.getWinner()}"></p>
+    <button type="submit" th:href="@{'/makeAMove'}"> TRY AGAIN </button>
+</form>
+</body>
