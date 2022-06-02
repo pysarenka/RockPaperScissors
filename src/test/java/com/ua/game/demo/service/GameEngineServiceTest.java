@@ -20,8 +20,6 @@ public class GameEngineServiceTest {
     @Mock
     private CurbController controller;
     @Mock
-    private GameRulesService service;
-    @Mock
     private RandomThrowService randomThrowService;
 
 
@@ -40,6 +38,4 @@ public class GameEngineServiceTest {
         String actual = gameEngineService.findWinner("scissors");
         assertEquals("You lose!",actual);
     }
-
-
 }
