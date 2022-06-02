@@ -28,12 +28,15 @@ public class GameEngineService {
         try {
             systemMove = controller.getResponse();
         } catch (IOException e) {
+            log.info("An error occured during request to Curb Server, generating a random move.");
             systemMove = randomThrowService.calculateRandomThrow();
         }
         if (userChoice.equalsIgnoreCase(systemMove)) {
             return IT_S_A_DRAW;
         } else {
-            return service.isPlayerWin(userChoice, systemMove) ? YOU_WIN : YOU_LOSE;
+            String result= service.isPlayerWin(userChoice, systemMove) ? YOU_WIN : YOU_LOSE;
+            log.info("Game result: {}", result);
+            return result;
         }
     }
 }

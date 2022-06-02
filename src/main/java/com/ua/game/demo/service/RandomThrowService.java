@@ -1,7 +1,8 @@
 package com.ua.game.demo.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
+@Slf4j
 @Service
 public class RandomThrowService {
 
@@ -15,6 +16,7 @@ public class RandomThrowService {
         } else {
             move = "scissors";
         }
+        log.info("Generating a random move: {}", move);
         return move;
     }
 }
