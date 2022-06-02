@@ -21,21 +21,27 @@ public class GameEngineServiceTest {
     private CurbController controller;
     @Mock
     private RandomThrowService randomThrowService;
-
+    @Mock
+    private GameRulesService service;
 
     @Test
     public void isDraw() throws IOException {
+        // Given
         when(controller.getResponse()).thenReturn("rock");
+        // When
         String actual = gameEngineService.findWinner("rock");
+        // Then
         assertEquals("It's a draw!", actual);
     }
 
-
     @Test
     public void isExceptionThrown() throws IOException {
+        // Given
         when(controller.getResponse()).thenThrow(new CustomException());
         when(randomThrowService.calculateRandomThrow()).thenReturn("rock");
+        // When
         String actual = gameEngineService.findWinner("scissors");
-        assertEquals("You lose!",actual);
+        //Then
+        assertEquals("You lose!", actual);
     }
 }

@@ -10,12 +10,17 @@ public class GameRulesServiceTest {
 
     @Test
     public void isPlayerWin_False() {
-        boolean actual=service.isPlayerWin("rock", "paper");
+        // When
+        boolean actual = service.isPlayerWin("rock", "paper");
+        // Then
         assertFalse(actual);
     }
+
     @Test
     public void isPlayerWin_True() {
-        boolean actual=service.isPlayerWin("rock", "scissors");
+        // When
+        boolean actual = service.isPlayerWin("rock", "scissors");
+        // Then
         assertTrue(actual);
     }
 
