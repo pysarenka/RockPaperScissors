@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title> Let's play "Rock Paper Scissor"</title>
+    <title>Make your move</title>
+</head>
+<body>
+<form action="#" th:action="@{'/getWinner'}" method="post">
+    <fieldset id="group1">
+        <input type="radio" th:value="rock" th:name="move">Rock</input>
+        <input type="radio" th:value="paper" th:name="move">Paper</input>
+        <input type="radio" th:value="scissors" th:name="move">Scissors</input>
+    </fieldset>
+    <button type="submit"> Send</button>
+</form>
+</body>
+</html>
