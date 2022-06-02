@@ -1,4 +1,4 @@
-package com.ua.game.demo;
+package com.ua.game.demo.service;
 
 import com.ua.game.demo.service.GameRulesService;
 import org.junit.Test;
